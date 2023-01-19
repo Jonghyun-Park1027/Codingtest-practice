@@ -1,0 +1,13 @@
+*.zip
+business_data_science/*.jpg
+*.pdf
+*.csv
+*.mp3
+*.xlsx
+NLP/tensorflow-ml-nlp-tf2/
+.idea/
+crawling/selenium/Lib/
+crawling/selenium/Scripts/
+*.png
+./picture/
+*.jpg
