@@ -4,4 +4,6 @@
 
 ### Implementation
 
-- [Simulation](/Implementation/simulation.ipynb) 
+- [Simulation](/Implementation/simulation.ipynb)
+- [Simulation2](/Implementation/simulation2.py)
+
