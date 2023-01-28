@@ -40,6 +40,7 @@ dfs(graph, v, visited)
 # print(visited)
 print(graph)
 '''
+'''
 n, m, v = map(int, input().split())
 graph = [[]]
 for _ in range(m):
@@ -66,3 +67,43 @@ def dfs(graph, v, visited):
 visited = [False] * m
 
 dfs(graph, v, visited)
+'''
+from collections import deque
+n, m, v = map(int, input().split())
+graph = []
+for _ in range(m):
+    graph.append(list(map(int,input().split())))
+# dfs
+def dfs(visited, v, graph):
+
+    # find minimum node
+    visited[v] = True
+    print(v, end=" ")
+    next_node = [i[1] for i in graph if i[0]==v]
+    next_node.sort()
+
+    for i in next_node:
+        if not visited[i]:
+            dfs(visited, i, graph)
+
+visited = [False] * m
+dfs(visited, v, graph)
+# bfs
+visited = [False] * m
+def bfs(visited, v, graph):
+
+    queue = deque([v])
+    visited[v] =True
+
+    while queue :
+
+        v= queue.popleft()
+        print(v, end=" ")
+        next_node = [i[1] for i in graph if i[0] == v]
+        next_node.sort()
+        for i in next_node:
+            if not visited[i]:
+                queue.append(i)
+                visited[i] =True
+print("\n")
+bfs(visited, v, graph)
