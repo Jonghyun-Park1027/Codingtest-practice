@@ -61,30 +61,26 @@ graph = []
 for _ in range(N):
     graph.append(list(map(int,list(input()))))
 count = 0
+
+
 def dfs(graph,n,m):
     global N, M, count
     print("active")
     if n <= -1 or m <= -1 or m>=M or n >=N:
         print("wtf")
         False
+    print(n,m)
     graph[n][m] = 1
     print("work1")
-    for idx,value in enumerate(graph):
-        # print(idx,value)
-        for idx_2,value_2 in enumerate(value):
-            if graph[idx-1][idx_2] == 0 :
-                # print(graph)
-                dfs(graph, idx-1, idx_2)
-            elif graph[idx+1][idx_2] == 0 :
-                dfs(graph, idx+1,idx_2)
-            elif graph[idx][idx_2-1] == 0:
-                dfs(graph, idx, idx_2-1)
-            elif graph[idx][idx_2]+1 == 0:
-                dfs(graph, idx, idx_2+1)
-            elif idx >= N and idx_2 >= M:
-                return count, graph
-            print(graph)
-        count +=1
+    for i in range(N):
+        for j in range(M):
+
+
+    else:
+        return count, graph
+    # print(graph)
+    print("count")
+    count +=1
     # print("work2")
     return count, graph
 
