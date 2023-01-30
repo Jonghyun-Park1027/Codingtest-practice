@@ -13,6 +13,7 @@ def dfs(x,y):
     if x <= -1 or x>=n
 
 '''
+'''
 # N, M을 공백을 기준으로 구분하여 입력 받기
 n, m = map(int, input().split())
 
@@ -47,3 +48,51 @@ for i in range(n):
             result += 1
 
 print(result) # 정답 출력
+'''
+'''
+4 5
+00110
+00011
+11111
+00000
+'''
+n, m = map(int, input().split())
+graph = []
+for _ in range(n):
+    graph.append(list(map(int,list(input()))))
+
+def dfs(graph,n,m):
+    graph[n][m] =1
+    try :
+        if graph[n-1][m] == 0 :
+            dfs(graph,n-1,m)
+            print("work1", n-1,m)
+        if graph[n+1][m] == 0:
+            dfs(graph,n+1, m)
+            print("work2",n+1,m)
+        if graph[n][m-1] == 0:
+            dfs(graph, n, m-1)
+            print("work3",n,m-1)
+        if graph[n][m+1] == 0:
+            dfs(graph, n, m+1)
+            print("work4",n,m+1)
+    except :
+        return
+    return graph
+
+a =dfs(graph, 0,0)
+print(a)
+#
+#
+# for i in graph:
+#     for j in i:
+#         if j == 0:
+#             graph[i][j] = 1
+#             if j+1 == 0:
+#                 graph[i][j+1] = 1
+#             if j-1 == 0:
+#                 graph[]
+
+# visited = [[False] * m] * n
+
+# print(visited)
