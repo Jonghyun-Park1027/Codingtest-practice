@@ -56,43 +56,38 @@ print(result) # 정답 출력
 11111
 00000
 '''
-n, m = map(int, input().split())
+N, M = map(int, input().split())
 graph = []
-for _ in range(n):
+for _ in range(N):
     graph.append(list(map(int,list(input()))))
-
+count = 0
 def dfs(graph,n,m):
-    graph[n][m] =1
-    try :
-        if graph[n-1][m] == 0 :
-            dfs(graph,n-1,m)
-            print("work1", n-1,m)
-        if graph[n+1][m] == 0:
-            dfs(graph,n+1, m)
-            print("work2",n+1,m)
-        if graph[n][m-1] == 0:
-            dfs(graph, n, m-1)
-            print("work3",n,m-1)
-        if graph[n][m+1] == 0:
-            dfs(graph, n, m+1)
-            print("work4",n,m+1)
-    except :
-        return
-    return graph
+    global N, M, count
+    print("active")
+    if n <= -1 or m <= -1 or m>=M or n >=N:
+        print("wtf")
+        False
+    graph[n][m] = 1
+    print("work1")
+    for idx,value in enumerate(graph):
+        # print(idx,value)
+        for idx_2,value_2 in enumerate(value):
+            if graph[idx-1][idx_2] == 0 :
+                # print(graph)
+                dfs(graph, idx-1, idx_2)
+            elif graph[idx+1][idx_2] == 0 :
+                dfs(graph, idx+1,idx_2)
+            elif graph[idx][idx_2-1] == 0:
+                dfs(graph, idx, idx_2-1)
+            elif graph[idx][idx_2]+1 == 0:
+                dfs(graph, idx, idx_2+1)
+            elif idx >= N and idx_2 >= M:
+                return count, graph
+            print(graph)
+        count +=1
+    # print("work2")
+    return count, graph
+
 
 a =dfs(graph, 0,0)
 print(a)
-#
-#
-# for i in graph:
-#     for j in i:
-#         if j == 0:
-#             graph[i][j] = 1
-#             if j+1 == 0:
-#                 graph[i][j+1] = 1
-#             if j-1 == 0:
-#                 graph[]
-
-# visited = [[False] * m] * n
-
-# print(visited)
