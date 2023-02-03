@@ -1,4 +1,3 @@
-# 스택과 큐의 예시(거리, 노드)로 표시된 리스트가 본 문제에서 어떻게 적용되는지 이해가 안됨
 
 '''
 from collections import deque
@@ -28,7 +27,7 @@ print(count)
 '''
 
 # 해답을 보니 기본개념 + 책 설명만으로 이해하기 어려울 수도 있다는 생각이 듦
-
+'''
 from collections import deque
 
 # N, M을 공백을 기준으로 구분하여 입력 받기
@@ -69,3 +68,38 @@ def bfs(x, y):
 
 # BFS를 수행한 결과 출력
 print(bfs(0, 0))
+'''
+'''
+5 6
+101010
+111111
+000001
+111111
+111111
+
+'''
+from collections import deque
+N, M = map(int, input().split())
+graph = []
+for _ in range(N):
+    graph.append(list(map(int,list(input()))))
+count = 0
+visited = []
+
+def dfs(graph, n, m, visited ):
+    global count, N, M
+    queue = deque([n,m])
+    graph[n][m] = 0
+    v = queue.popleft()
+    print(visited)
+    # count += 1
+    if n >= N and m >= M:
+        return
+    # right
+    if graph[n][m+1] == 1 and m+1
+    # down
+
+
+
+
+
