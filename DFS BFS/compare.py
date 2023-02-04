@@ -1,37 +1,50 @@
+from collections import deque
+
 N, M = map(int, input().split())
 graph = []
 for _ in range(N):
     graph.append(list(map(int, list(input()))))
-count = 0
+way = deque()
 
 
-def dfs(graph, n, m):
-    global N, M
-    if n >= N and m >= M:
-        return
-    graph[n][m] = 1
+def bfs(graph, n, m):
+    # global N, M
+    graph[n][m] = 0
+    way.append([n, m])
+    # print(start, start[0], start[1])
+    start = way.popleft()
+    if n >= N-1 and m >= M-1:
+        return graph, way
+    print("start",start)
+    up = start[0] - 1
+    down = start[0] + 1
+    left = start[1] - 1
+    right = start[1] + 1
+    while True:
+        if n >= N-1 and m>=M-1:
+            return
 
-    # up
-    if n - 1 > -1 and graph[n - 1][m] == 0:
-        dfs(graph, n - 1, m)
-    # down
-    if n + 1 < N and graph[n + 1][m] == 0:
-        dfs(graph, n + 1, m)
-    # left
-    if m - 1 > -1 and graph[n][m - 1] == 0:
-        dfs(graph, n, m - 1)
-    # right
-    if m + 1 < M and graph[n][m + 1] == 0:
-        dfs(graph, n, m + 1)
+        # up
+        # if up >= 0 and graph[up][m] == 1:
+        # way.append([up, m])
+        # bfs(graph, up, m)
+        # down
+        if down <= N and graph[down][m] == 1:
+            # way.append([down, m])
+            print("down",down, m)
+            bfs(graph, down, m)
+        # left
+        # if left >= 0 and graph[n][left] == 1:
+        #     # way.append([n, left])
+        #     bfs(graph, n, left)
+        # right
+        if right <= M and graph[n][right] == 1:
+            # way.append([n, right])
+            print("right",n, right)
+            bfs(graph, n, right)
+        return graph, way
 
-    return
 
+a = bfs(graph, 0, 0)
 
-# find '0'
-for i in range(N):
-    for j in range(M):
-        if graph[i][j] == 0:
-            dfs(graph, i, j)
-            count += 1
-
-print(count)
+print(a)
