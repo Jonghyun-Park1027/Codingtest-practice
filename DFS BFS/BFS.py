@@ -99,56 +99,96 @@ def dfs(graph, n, m, visited ):
     if graph[n][m+1] == 1 and m+1
     # down
 '''
-from collections import deque
+'''from collections import deque
 
 N, M = map(int, input().split())
 graph = []
 for _ in range(N):
     graph.append(list(map(int, list(input()))))
 way = deque()
-
+answer = []
 count = 0
-def bfs(graph, n, m):
-    global count
+going = True
+def bfs(graph, n, m,answer):
+    global count, going
     graph[n][m] = 0
     way.append([n, m])
+    # if 0<= n and 0 <= m and
     # print(start, start[0], start[1])
     start = way.popleft()
-    if n == N-1 and m == M-1:
-        return graph, way, count
-    print("start",start)
+    answer.append(start)
     up = start[0] - 1
     down = start[0] + 1
     left = start[1] - 1
     right = start[1] + 1
-    count += 1
-    while True:
-        # if n >= N-1 and m>=M-1 and n>0 and m >0:
-        #     return graph,way, count
+    # try :
+    #     if graph[up][m] == 0 and graph[down][m] == 0 and graph[n][left]==0 and graph[n][right] == 0:
+    #         return
+    # except IndexError:
+    #     pass
+    # print(start[1])
+    # if start[0] == N-1 and start[1] == M-1:
+    #     answer.append(start)
+    #     return graph, start
 
-        # up
-        if up >= 0 and graph[up][m] == 1:
-            # way.append([up, m])
-            print("up", up, m)
-            bfs(graph, up, m)
-        # down
-        if down <= N-1 and graph[down][m] == 1:
-            # way.append([down, m])
-            print("down",down, m)
-            bfs(graph, down, m)
-        # left
-        if left >= 0 and graph[n][left] == 1:
-            # way.append([n, left])
-            print("left",n,left)
-            bfs(graph, n, left)
-        # right
-        if right <= M-1 and graph[n][right] == 1:
-            # way.append([n, right])
-            print("right",n, right)
-            bfs(graph, n, right)
-    # return graph, way, count
+    # print("start",start)
 
+    if up >= 0 and up <= N-1:
+        way.append([up, m])
 
-a = bfs(graph, 0, 0)
+    if down >= 0 and down <= N-1:
+        way.append([down, m])
+    if left >= 0 and left <= M-1:
+        way.append([n, left])
+    if right >= 0 and right <= M-1:
+        way.append([n, right])
 
-print(a)
+    while going:
+        for
+        bfs(graph, way[0][0], way[0][1], answer)
+    # return way ,start, answer
+    # count += 1
+    # going = True
+    # while going:
+    #     # global going
+    #     # if n >= N-1 and m>=M-1 and n>0 and m >0:
+    #     #     return graph,way, count
+    #
+    #     if start[0] == N - 1 and start[1] == M - 1:
+    #         # global going
+    #         going = False
+    #         return graph, start
+    #
+    #     # up
+    #     if up >= 0 and graph[up][m] == 1:
+    #         # way.append([up, m])
+    #         print("up", up, m)
+    #         bfs(graph, up, m,answer)
+    #     # down
+    #     if down <= N-1 and graph[down][m] == 1:
+    #         # way.append([down, m])
+    #         print("down",down, m)
+    #         bfs(graph, down, m,answer)
+    #     # left
+    #     if left >= 0 and graph[n][left] == 1:
+    #         # way.append([n, left])
+    #         print("left",n,left)
+    #         bfs(graph, n, left,answer)
+    #     # right
+    #     if right <= M-1 and graph[n][right] == 1:
+    #         # way.append([n, right])
+    #         print("right",n, right)
+    #         bfs(graph, n, right,answer)
+    #     # answer.append(start)
+    #     # if n >= N-1 and m >= M-1:
+    #     #     print("end")
+    #     #     answer.append([n,m])
+    #
+    #     break
+    # # answer.pop()
+
+a = bfs(graph, 0, 0,answer)
+
+# print(a)
+print(way)
+'''
