@@ -192,3 +192,41 @@ a = bfs(graph, 0, 0,answer)
 # print(a)
 print(way)
 '''
+from collections import deque
+
+N, M = map(int, input().split())
+graph = []
+for _ in range(N):
+    graph.append(list(map(int, list(input()))))
+
+dx = [0, 0, -1, 1]
+dy = [-1, 1, 0, 0]
+
+def dfs(x, y):
+    queue = deque()
+    queue.append([x, y])
+    # graph[x][y] = 1
+    #  상하좌우표시
+
+    while queue:
+        # queue.popleft()
+        x, y = queue.popleft()
+        for i in range(4):
+            # 4방향 설정
+            tx = x + dx[i]
+            ty = y + dy[i]
+            # graph를 벗어나면 지나가기
+            if tx <= -1 or ty <= -1 or tx >= N or ty >= M:
+                continue
+            # 벽이면 지나가기
+            if graph[tx][ty] == 0:
+                continue
+            if graph[tx][ty] == 1:
+                graph[tx][ty] = graph[x][y] + 1
+                queue.append([tx, ty])
+    return graph[N - 1][M - 1]
+
+
+a = dfs(0, 0)
+print(a)
+# 더하기
