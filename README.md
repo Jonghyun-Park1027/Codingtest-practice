@@ -8,4 +8,6 @@
 ## DFS, BFS
 - [DFS](/DFS%20BFS/DFS.py)
 - [BFS](/DFS%20BFS/BFS.py)
-- [DFS,BFS](/DFS%20BFS/DFS_BFS_baekjun.py)
+- [DFS,BFS(백준 1260)](/DFS%20BFS/DFS_BFS_baekjun.py)
+
+## Sorting
