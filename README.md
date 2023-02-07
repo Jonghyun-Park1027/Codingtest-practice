@@ -11,3 +11,4 @@
 - [DFS,BFS(백준 1260)](/DFS%20BFS/DFS_BFS_baekjun.py)
 
 ## Sorting
+- [updown](/Sorting/updown.py)
