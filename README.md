@@ -12,3 +12,5 @@
 
 ## Sorting
 - [updown](/Sorting/updown.py)
+- [sorting2](/Sorting/sorting2.py)
+- [sorting3](/Sorting/sorting3.py)
