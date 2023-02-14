@@ -14,3 +14,8 @@
 - [updown](/Sorting/updown.py)
 - [sorting2](/Sorting/sorting2.py)
 - [sorting3](/Sorting/sorting3.py)
+- [sorting4](/Sorting/sorting4.py)
+- [sorting5](/Sorting/sorting5.py)
+
+## Dynamic Programming
+- [Dynamic](/Dynamic_Programming/1로만들기.py)
