@@ -2,7 +2,7 @@
 4
 1 3 1 5
 '''
-
+'''
 n = int(input())
 tank = list(map(int, input().split()))
 # print(tank)
@@ -15,3 +15,4 @@ for i in range(2, n):
     memory[i] = max(memory[i -1], memory[i-2] + tank[i])
 
 print(memory)
+'''

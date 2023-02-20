@@ -1,3 +1,4 @@
+'''
 x = int(input())
 # x % 5 == 0
 count = 0
@@ -26,3 +27,4 @@ def cal(x):
 # print(count)
 cal(x)
 print(count)
+'''
