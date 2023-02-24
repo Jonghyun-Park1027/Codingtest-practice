@@ -29,3 +29,61 @@ cal(x)
 print(count)
 '''
 # day 21
+'''
+# 이해가 되질 않는다...
+x = int(input())
+cal = []
+
+
+def five(x):
+    a = x // 5
+    # cal.append(a)
+    return a
+def three(x):
+    a = x // 3
+    # cal.append(a)
+    return a
+def two(x):
+    a = x //2
+    # cal.append(a)
+    return a
+def one(x):
+    a = x-1
+    # cal.append(a)
+    return a
+
+
+def make_1(x):
+    if x == 1:
+        return
+    data = []
+    if x%5 ==0:
+        num = x // 5
+        data.append(num)
+    if x%3 == 0:
+        num = x // 3
+        data.append(num)
+    if x%2 == 0:
+        num = x // 2
+        data.append(num)
+    else :
+        num = x // 1
+        data.append(num)
+    cal.append(data)
+    for i in data:
+        make_1(i)
+        # if cal][-1]== cal][-1]:
+        #     pass
+    # for in cal:
+    #     if[-1] == 1:
+    #         return
+    #     if == False:
+    #         pass
+    #     make_1[-1])
+
+# for in range(4):
+
+make_1(x)
+print(cal)
+'''
+# day 22
