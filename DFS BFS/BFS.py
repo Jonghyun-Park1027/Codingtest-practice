@@ -192,6 +192,7 @@ a = bfs(graph, 0, 0,answer)
 # print(a)
 print(way)
 '''
+'''
 from collections import deque
 
 N, M = map(int, input().split())
@@ -230,3 +231,18 @@ def dfs(x, y):
 a = dfs(0, 0)
 print(a)
 # 더하기
+'''
+# 기초부터 다시시작 BFS day 22
+graph = [0] * 21
+def facto(x):
+    if graph[x] != 0:
+        return graph[x]
+    if x <= 1:
+        print(1)
+        return 1
+    graph[x] = facto(x-1) * facto(x-2)
+    print("work")
+    return
+
+facto(20)
+print(graph)

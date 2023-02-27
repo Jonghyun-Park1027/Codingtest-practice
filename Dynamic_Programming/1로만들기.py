@@ -86,4 +86,5 @@ def make_1(x):
 make_1(x)
 print(cal)
 '''
-# day 22
+# TODO : 나중에 다시하기
+
