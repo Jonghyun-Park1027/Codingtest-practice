@@ -10,7 +10,7 @@
 - [BFS](/Book/DFS_20BFS/BFS.py)
 - [BFS2](/Book/DFS_20BFS/BFS2.py)
 - [DFS,BFS(백준 1260)](/Baek/DFS_20BFS/DFS_BFS_baekjun.py)
-
+- [DFS, BFS(백준 2116)](/Baek/2116.py)
 ## Sorting
 - [updown](/Book/Sorting/updown.py)
 - [sorting2](/Book/Sorting/sorting2.py)
