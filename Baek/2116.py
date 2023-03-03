@@ -8,6 +8,7 @@ data_deque = deque(data)
 data_deque.rotate(-1)
 print(data_deque)
 '''
+'''
 # 입력 받기
 n = int(input())
 graph = []
@@ -72,7 +73,7 @@ def start_position(underside):
     return start_position(next)
 print(start_position(4))
 print(sum(data))
-
+'''
 '''
 치명적인 실수를 했는데, 그것은 리스트 rotation을 통해 구현하려 했던 아이디어 자체였다
 구현자체는 성공했다 그러나 인덱스가 3 이상일 경우 -1로 이하일경우 1로 돌려야 한다는 문제가 있다
